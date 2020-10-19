@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { FormattedMessage} from "react-intl";
 
 const Contact = ({ data }) => {
-   const [url, setUrl] = useState('mailto:test@example.com?subject=subject&body=body');
+   //const [url, setUrl] = useState('mailto:test@example.com?subject=subject&body=body');
    const [name, setName] = useState('');
    const [subject, setSubject] = useState('');
    const [email, setEmail] = useState('');
    const [message, setMessage] = useState('');
 
-   console.log(data)
 
     const handleClick = (e) => {
        e.preventDefault();
@@ -41,27 +41,55 @@ const Contact = ({ data }) => {
 					<fieldset>
 
                   <div>
-						   <label htmlFor="contactName">Name <span className="required">*</span></label>
+						   <label htmlFor="contactName">
+                        <FormattedMessage 
+                           id="contact.name"
+                           defaultMessage="name">
+                        </FormattedMessage>
+                        <span className="required">*</span>
+                     </label>
 						   <input value={name} type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={e => setName(e.target.value)}/>
                   </div>
 
                   <div>
-						   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
+						   <label htmlFor="contactEmail">
+                        <FormattedMessage 
+                           id="contact.email"
+                           defaultMessage="email">
+                        </FormattedMessage> 
+                        <span className="required">*</span>
+                     </label>
 						   <input value={email} type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={e=> setEmail(e.target.value)}/>
                   </div>
 
                   <div>
-						   <label htmlFor="contactSubject">Subject</label>
+						   <label htmlFor="contactSubject">
+                        <FormattedMessage 
+                           id="contact.subject"
+                           defaultMessage="subject">
+                        </FormattedMessage> 
+                     </label>
 						   <input value={subject} type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={e => setSubject(e.target.value)}/>
                   </div>
 
                   <div>
-                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
+                     <label htmlFor="contactMessage">
+                        <FormattedMessage 
+                           id="contact.message"
+                           defaultMessage="message">
+                        </FormattedMessage> 
+                        <span className="required">*</span>
+                     </label>
                      <textarea value={message} onChange={e => setMessage(e.target.value)} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
                   </div>
 
                   <div>
-                     <button type='submit' onClick={handleClick} className="submit">Submit</button>
+                     <button type='submit' onClick={handleClick} className="submit">
+                        <FormattedMessage 
+                           id="contact.submit"
+                           defaultMessage="submit">
+                        </FormattedMessage>
+                     </button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif" />
                      </span>
@@ -79,7 +107,12 @@ const Contact = ({ data }) => {
             <aside className="four columns footer-widgets">
                <div className="widget widget_contact">
 
-					   <h4>Address and Phone</h4>
+					   <h4>
+                  <FormattedMessage 
+                     id="app.education"
+                     defaultMessage="education">
+                  </FormattedMessage>
+                  </h4>
 					   <p className="address">
 						   {data?.name}<br />
 						   {data?.address.street} <br />

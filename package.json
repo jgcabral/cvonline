@@ -1,12 +1,13 @@
 {
   "name": "personalportfolio",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^3.1.2",
+    "react-intl": "^5.8.6",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -26,5 +27,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "![ReactJS Resume Website Template](resume-screenshot.png?raw=true \"ReactJS Resume Website Template\")",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "portfolio"
+  ],
+  "author": "Gabriel Cabral",
+  "license": "MIT"
+
 }
